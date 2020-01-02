@@ -1,0 +1,13 @@
+#!/bin/bash -l
+#SBATCH --time=0-80:00:00 --mem-per-cpu=550
+#SBATCH -o ./logs/job-%a.out
+#SBATCH --array=305
+module load matlab
+workfolder="/scratch/work/pajunel2/"
+outputfile="saved_outputs/non_diffuse_tdesign_eigenmike_encoding2_radinv_noscat_$SLURM_ARRAY_TASK_ID.mat"
+N_diffuse_repetitions=20
+setting="tdesign_eigenmike_encoding_noscat"
+encoding_regularization="radinv"
+rng_seed=$SLURM_ARRAY_TASK_ID
+touch $outputfile
+matlab -nojvm -r "savePressureFieldsTriton('$workfolder','$outputfile',$N_diffuse_repetitions,'$setting',$rng_seed,0,'$encoding_regularization'); exit(0)"
