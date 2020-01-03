@@ -1,3 +1,5 @@
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.3597182.svg)](https://doi.org/10.5281/zenodo.3597182)
+
 # Effects of a rigid spherical scatterer in spatial audio reproduction fields
 
 #### A library for analysing the effects of a rigid spherical scatterer in virtual loudspeaker setups
